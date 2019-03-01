@@ -18,3 +18,10 @@ C:\Users\nchar\Desktop\Recursividade\Recursividade\obj\Debug\Recursividade.cspro
 C:\Users\nchar\Desktop\Recursividade\Recursividade\obj\Debug\Recursividade.csproj.CoreCompileInputs.cache
 C:\Users\nchar\Desktop\Recursividade\Recursividade\obj\Debug\Recursividade.exe
 C:\Users\nchar\Desktop\Recursividade\Recursividade\obj\Debug\Recursividade.pdb
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\obj\Debug\Recursividade.csprojAssemblyReference.cache
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\obj\Debug\Recursividade.csproj.CoreCompileInputs.cache
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\obj\Debug\Recursividade.pdb
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\bin\Debug\Recursividade.exe.config
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\bin\Debug\Recursividade.exe
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\bin\Debug\Recursividade.pdb
+C:\Users\nchar\Documents\GitHub\Recursive-Functions\Recursividade\obj\Debug\Recursividade.exe

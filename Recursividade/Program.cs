@@ -54,6 +54,58 @@ namespace Recursividade
                 return (n + somaIntPosRec(n - 1));
             }
         }
+        static int somaIntPosParIt(int n)
+        {
+            int soma = 0;
+            for (int i = 1; i <= n*2; i++)
+            {
+                if (i%2==0)
+                {
+                    soma += i;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return (soma);
+        }
+
+        static int somaIntPosParRec (int n)
+        {
+            if (n == 1)
+            {
+                return (2);
+            }
+            else
+            {
+                return (n * 2 + somaIntPosParRec(n - 1));
+            }
+        }
+
+        static int somaIntPosImpIt (int n)
+        {
+            int soma = 0;
+            for (int i = 0; i < n*2; i++)
+            {
+                if (i%2!=0)
+                {
+                    soma += i;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            return soma;
+        }
+
+        static int somaIntPosImpRec(int n)
+        {
+            return (0);
+        }
+
         static int potencialIt(int a, int b)
         {
             int pot = 1;
@@ -69,6 +121,55 @@ namespace Recursividade
                 return (1);
             else
                 return (a * (potencialRec(a, b - 1)));
+        }
+
+        static void preencheVetor(int[] V, int x)
+        { 
+            for (int i = 0; i < x; i++)
+            {
+                Console.Write("Digite o {0}º, valor inteiro: ", i+1);
+                V[i] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        static int maiorElemento(int[] V, int x)
+        {
+            int isolado, maiorResto;
+
+            if (x == 1)
+            {
+                return (V[0]);
+            }
+            else
+            {
+                isolado = V[x - 1];
+                maiorResto = maiorElemento(V, x - 1);
+
+                if(isolado > maiorResto)
+                {
+                    return (isolado);
+                }
+                else
+                {
+                    return (maiorResto);
+                }
+            }
+        }
+
+        static bool palindrome(string s, int i, int j)
+        {
+            if (s[i] != s[j])
+            {
+                return false;
+            }
+            else if (i>j)
+            {
+                return (true);
+            }
+            else
+            {
+                return (palindrome(s, i + 1, j - 1));
+            }
         }
         static int menu()
         {
@@ -97,6 +198,7 @@ namespace Recursividade
         static void Main(string[] args)
         {
             int op,x;
+            int[] V;
 
             do
             {
@@ -162,7 +264,7 @@ namespace Recursividade
                         break;
 
                     case 5:
-                        Console.WriteLine("Insira a quantidade de números inteiros a serem calculados: ");
+                        Console.WriteLine("Insira a quantidade de números inteiros pares a serem calculados: ");
                         x = int.Parse(Console.ReadLine());
                         if (x < 0)
                         {
@@ -170,16 +272,37 @@ namespace Recursividade
                         }
                         else
                         {
-                            Console.WriteLine($"A soma dos número inteiros é de: {x} é {somaIntPosRec(x)}");
+                            Console.WriteLine($"A soma dos número inteiros pares é de: {x} é {somaIntPosParIt(x)}");
                         }
                         Console.ReadKey();
                         break;
 
                     case 6:
-                        
+                        Console.WriteLine("Insira a quantidade de números inteiros pares postivos a serem calculados: ");
+                        x = int.Parse(Console.ReadLine());
+                        if (x < 0)
+                        {
+                            Console.WriteLine("Valor inválido!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"A soma dos número inteiros pares é de: {x} é {somaIntPosImpRec(x)}");
+                        }
+                        Console.ReadKey();
                         break;
 
                     case 7:
+                        Console.WriteLine("Insira a quantidade de números inteiros ímpares postivos a serem calculados: ");
+                        x = int.Parse(Console.ReadLine());
+                        if (x < 0)
+                        {
+                            Console.WriteLine("Valor inválido!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"A soma dos número inteiros ímpares é de: {x} é {somaIntPosImpRec(x)}");
+                        }
+                        Console.ReadKey();
                         break;
 
                     case 8:
@@ -192,6 +315,13 @@ namespace Recursividade
                         break;
 
                     case 11:
+                        Console.Clear();
+                        Console.Write("Insira a quantidade de elementos: ");
+                        x = int.Parse(Console.ReadLine());
+                        V = new int[x];
+                        preencheVetor(V, x);
+                        Console.WriteLine("O maior elemento do vetor é {0}", Convert.ToString(maiorElemento(V, x)));
+                        Console.ReadKey();
                         break;
 
                     case 12:
